@@ -117,7 +117,7 @@ class NewsManager
         if ($news->isValid()) {
             $news->isNew() ? $this->add($news) : $this->update($news);
         } else {
-            throw new RuntimeException('The news must be valid to be enrigestered');
+            throw new RuntimeException('The news must be valid to be recorded.');
         }
         
     }
