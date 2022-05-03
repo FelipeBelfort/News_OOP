@@ -1,6 +1,6 @@
 <?php
 
-class News
+class News 
 {
     protected   $errors = array(),
                 $id,
