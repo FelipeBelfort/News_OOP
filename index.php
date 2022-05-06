@@ -3,6 +3,7 @@ require 'lib/auto-load.inc.php';
 
 $db = DBFactory::getPDOConnexion();
 $manager = new NewsManager($db);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +17,7 @@ $manager = new NewsManager($db);
     <p><a href="admin.php">Go to admin page.</a></p>    
 <?php
 if (isset($_GET['id'])) {
+    echo '<p><a href=".">Go to HomePage</a></p> ';
     $news = $manager->getSingle((int) $_GET['id']);
 
     echo "<p> By <strong>", $news->author(), '</strong>, ', $news->dateCreation(), '</p>', "\n", 
@@ -47,3 +49,4 @@ else {
 
 </body>
 </html>
+

@@ -27,12 +27,15 @@ if (isset($_POST['id'])) {
     $news->setId($_POST['id']);
 }
 
-if ($news->isValid()) {
-    $manager->save($news);
+if (isset($news)) {
 
-    $message = $news->isNew() ? 'The news has been recorded!' : 'The news has been updated!';
-} else {
-    $errors = $news->errors();
+    if ($news->isValid()){
+        $manager->save($news);
+
+        $message = $news->isNew() ? 'The news has been recorded!' : 'The news has been updated!';
+    } else {
+        $errors = $news->errors();
+    }
 }
 ?>
 <!DOCTYPE html>

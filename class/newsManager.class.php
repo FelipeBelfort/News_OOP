@@ -71,7 +71,7 @@ class NewsManager
                 FROM news ORDER BY id DESC';
         
         if ($first != -1 || $limit != -1) {
-            $sql .= 'LIMIT' .(int) $limit.' OFFSET '.(int) $first;
+            $sql .= ' LIMIT ' .(int) $limit.' OFFSET '.(int) $first;
         }
         
         $request = $this->db->query($sql);
